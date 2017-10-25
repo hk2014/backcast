@@ -8,9 +8,9 @@ var AppView = Backbone.View.extend({
     this.videoPlayer = new VideoPlayerView(this.videos.models[0]);
     this.videoList = new VideoListView({collection: this.videos});
     this.render();
-    this.$el.children()[0].children[1].children[0].children[0].append(this.videoPlayer.render().el);
-    this.$el.children()[0].children[1].children[1].children[0].append(this.videoList.render().el);
-
+    this.$el.find('.player').append(this.videoPlayer.render().el);
+    this.$el.find('.list').append(this.videoList.render().el);
+    // this.on('select', this.render, this);
   },
 
 
